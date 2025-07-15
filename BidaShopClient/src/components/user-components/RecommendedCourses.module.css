@@ -1,0 +1,82 @@
+.courseCard {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.badgeWrapper {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: auto;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    white-space: nowrap;
+}
+
+.badge i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.goldBadge {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border: 2px solid #FFD700;
+}
+
+.silverBadge {
+    background: linear-gradient(45deg, #C0C0C0, #A9A9A9);
+    border: 2px solid #C0C0C0;
+}
+
+.bronzeBadge {
+    background: linear-gradient(45deg, #CD7F32, #B8860B);
+    border: 2px solid #CD7F32;
+}
+
+/* Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.badge {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Hover effect */
+.courseCard:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .badge {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .badge i {
+        font-size: 14px;
+    }
+}
+
+/* Giữ lại các styles khác cho course content */
+.courseContent {
+    margin-top: 10px;
+}

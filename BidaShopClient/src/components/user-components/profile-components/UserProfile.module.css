@@ -1,0 +1,308 @@
+.mainContent {
+  padding: 20px;
+  /* margin-top: 60px; */
+  background: #1a1a1a;
+  color: #ffffff;
+  /* border-radius: 30px; */
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(238, 119, 36, 0.2);
+  background: #2d2d2d;
+}
+
+.cardHeader {
+  border-radius: 15px 15px 0 0;
+  background: #e96200;
+  color: white;
+  padding: 15px;
+}
+
+.cardBody {
+  padding: 20px;
+  background: #2d2d2d;
+  border-radius: 15px;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid #ee7724;
+  box-shadow: 0 2px 4px rgba(238, 119, 36, 0.3);
+  transition: filter 0.3s ease;
+  border-radius: 50%;
+}
+
+.onlineIndicator {
+  margin-top: 10px;
+  color: #ee7724;
+}
+
+.pulsatingDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #28a745;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation: pulse 1.5s infinite;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formControl {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ee7724;
+  background-color: #3d3d3d;
+  color: #e0e0e0;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.formControl:focus {
+  border-color: #d8363a;
+  box-shadow: 0 0 0 0.2rem rgba(238, 119, 36, 0.25);
+  background-color: #4d4d4d;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.submitButton {
+  background: #e96200;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(238, 119, 36, 0.3);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.avatarContainer {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.avatarOverlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgba(238, 119, 36, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.avatarContainer:hover .avatarOverlay {
+  opacity: 1;
+}
+
+.avatarContainer:hover .profileImage {
+  filter: brightness(0.8);
+}
+
+.avatarOverlay i {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* Cập nhật màu cho placeholder */
+::placeholder {
+  color: #999999;
+}
+
+/* Cập nhật màu cho text được chọn */
+::selection {
+  background: rgba(238, 119, 36, 0.3);
+  color: #e0e0e0;
+}
+
+/* Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+/* Thêm styles cho các container có background màu sáng */
+.lightContainer {
+  background: #404040;
+  color: #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+/* Password toggle button */
+.passwordToggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+  color: #ee7724;
+}
+
+/* Label styles */
+label {
+  color: #ee7724;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Thêm style cho các container có nền sáng */
+.lightBg {
+  background: #404040;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+/* Address suggestions */
+.suggestionsList {
+  background: #3d3d3d;
+  border: 1px solid #ee7724;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.suggestionItem {
+  padding: 10px;
+  cursor: pointer;
+  color: #e0e0e0;
+}
+
+.suggestionItem:hover {
+  background: #4d4d4d;
+}
+
+/* Thêm hiệu ứng mờ khi đang upload */
+.uploading {
+  filter: brightness(0.7);
+}
+
+/* Thay thế spinner bằng icon quả tạ quay */
+.spinner {
+  font-size: 24px;
+  color: #ffffff;
+  animation: rotate 1s linear infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cập nhật lại avatarOverlay để hiển thị đẹp hơn khi loading */
+.avatarOverlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgba(238, 119, 36, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.uploading+.avatarOverlay {
+  opacity: 1;
+}
+
+/* Thêm styles cho error container */
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background-color: #151515;
+  padding: 30px;
+}
+
+.errorIcon {
+  font-size: 60px;
+  color: #e96200;
+  margin-bottom: 20px;
+  animation: errorPulse 2s infinite;
+}
+
+/* .errorMessage {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+} */
+
+.errorDetail {
+  font-size: 16px;
+  color: #888;
+  text-align: center;
+}
+
+@keyframes errorPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

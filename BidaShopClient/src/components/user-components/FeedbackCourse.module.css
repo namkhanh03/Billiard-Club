@@ -1,0 +1,542 @@
+.feedbackContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.addFeedbackSection {
+  background: #1c1d1f;
+  border: 1px solid #2d2f31;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.feedbackForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ratingSelect {
+  display: flex;
+  gap: 8px;
+}
+
+.ratingStar {
+  font-size: 24px;
+  color: #2d2f31;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.ratingStar.active {
+  color: #f36100;
+}
+
+.feedbackInput {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  background: #2d2f31;
+  border: 1px solid #3d3f41;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.mediaUpload {
+  display: flex;
+  gap: 12px;
+}
+
+.uploadButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #2d2f31;
+  border: 1px solid #3d3f41;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.uploadButton:hover {
+  background: #3d3f41;
+}
+
+.fileInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.submitButton,
+.cancelButton {
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.submitButton {
+  background: #f36100;
+  color: #fff;
+  border: none;
+}
+
+.cancelButton {
+  background: transparent;
+  border: 1px solid #f36100;
+  color: #f36100;
+}
+
+.feedbackList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.feedbackItem {
+  background: #1c1d1f;
+  border: 1px solid #2d2f31;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.userInfo {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.userAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.userMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.userName {
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.feedbackMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.userRating {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #2d2f31;
+  font-size: 14px;
+}
+
+.star.filled {
+  color: #f36100;
+}
+
+.feedbackDate {
+  color: #666;
+  font-size: 14px;
+}
+
+.feedbackContent {
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.mediaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.mediaItem {
+  width: 100%;
+  height: 86px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 1px solid #f36100;
+}
+
+.mediaItem:hover {
+  transform: scale(1.02);
+}
+
+/* Thêm styles cho video */
+.mediaItem[controls] {
+  object-fit: contain;
+  background: #000;
+}
+
+.feedbackActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid #3d3f41;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.actionButton:hover {
+  background: #2d2f31;
+  border-color: #f36100;
+}
+
+.repliesList {
+  margin-top: 16px;
+  margin-left: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.replyItem {
+  background: #2d2f31;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .mediaUpload {
+    flex-direction: column;
+  }
+
+  .repliesList {
+    margin-left: 24px;
+  }
+}
+
+/* Styles cho phần rating tổng quan */
+.ratingOverview {
+  background: #1c1d1f;
+  border: 1px solid #2d2f31;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.ratingHeader {
+  margin-bottom: 20px;
+}
+
+.ratingStars {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* Tăng kích thước cho sao ở phần tổng hợp */
+.ratingStars .star {
+  font-size: 32px;
+  /* Tăng kích thước sao */
+  color: #f36100;
+}
+
+.ratingStars .star.empty {
+  color: #2d2f31;
+}
+
+.ratingScore {
+  font-size: 20px;
+  /* Tăng kích thước số điểm */
+  font-weight: 600;
+  color: #f36100;
+  margin-left: 8px;
+}
+
+.ratingMax {
+  color: #666;
+  font-weight: normal;
+  font-size: 20px;
+  /* Tăng kích thước text "trên 5" */
+  margin-left: 8px;
+}
+
+.totalRatings {
+  color: #666;
+  font-size: 14px;
+}
+
+.ratingBars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ratingBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.starLabel {
+  min-width: 60px;
+  color: #f36100;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 24px;
+  background: #2d2f31;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #f36100;
+  transition: width 0.3s ease;
+}
+
+.percentage {
+  min-width: 50px;
+  color: #666;
+  font-size: 16px;
+  text-align: right;
+}
+
+.imageModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.modalContent {
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullSizeImage {
+  max-width: 70%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Media queries cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .feedbackContainer {
+    padding: 10px;
+  }
+
+  .userInfo {
+    gap: 10px;
+  }
+
+  .feedbackMeta {
+    gap: 8px;
+  }
+
+  .mediaGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+  }
+
+  .mediaItem {
+    height: 120px;
+  }
+
+  .repliesList {
+    margin-left: 12px;
+    margin-top: 12px;
+  }
+
+  .replyItem {
+    padding: 12px;
+  }
+
+  .actionButton {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .ratingBars {
+    gap: 8px;
+  }
+
+  .ratingBar {
+    gap: 8px;
+  }
+
+  .starLabel {
+    min-width: 50px;
+    font-size: 16px;
+  }
+
+  .percentage {
+    min-width: 45px;
+    font-size: 14px;
+  }
+
+  .ratingStars .star {
+    font-size: 28px;
+  }
+
+  .ratingScore {
+    font-size: 20px;
+  }
+
+  .ratingMax {
+    font-size: 16px;
+  }
+}
+
+/* Media queries cho màn hình rất nhỏ */
+@media (max-width: 480px) {
+  .feedbackContainer {
+    padding: 8px;
+  }
+
+  .userAvatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .userName {
+    font-size: 14px;
+  }
+
+  .feedbackDate {
+    font-size: 12px;
+  }
+
+  .star {
+    font-size: 12px;
+  }
+
+  .mediaGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .mediaItem {
+    height: 100px;
+  }
+
+  .progressBar {
+    height: 18px;
+  }
+
+  .starLabel {
+    min-width: 45px;
+    font-size: 14px;
+  }
+
+  .percentage {
+    min-width: 40px;
+    font-size: 12px;
+  }
+
+  .ratingStars .star {
+    font-size: 24px;
+  }
+
+  .ratingScore {
+    font-size: 18px;
+  }
+
+  .ratingMax {
+    font-size: 14px;
+  }
+}
+
+.mediaPreview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.mediaPreview .mediaItem {
+  width: 100%;
+  height: 86px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 1px solid #f36100;
+}
+
+.mediaPreview .mediaItem:hover {
+  transform: scale(1.02);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  /* Khoảng cách giữa các nút */
+}

@@ -1,0 +1,32 @@
+{
+  "home": "Trang chủ",
+
+  "sidenav.dashboard": "ADMIN Quản lý",
+  "sidenav.dashboard.default": "Trang chủ",
+  "sidenav.dashboard.category": "Danh mục",
+  "sidenav.dashboard.new": "Quản lý bài viết",
+  "sidenav.dashboard.pricing": "Quản lý bảng giá",
+  "sidenav.dashboard.brand": "Quản lý thương hiệu",
+  "sidenav.dashboard.product-management": "Quản lý thực đơn",
+  "sidenav.dashboard.product": "Thực đơn",
+  "sidenav.dashboard.order": "Quản lý đơn hàng",
+  "sidenav.dashboard.voucher": "Quản lý mã giảm giá",
+  "sidenav.dashboard.facility-management": "Quản lý chi nhánh",
+  "sidenav.dashboard.table-management": "Bàn Bida",
+  "sidenav.dashboard.branch-management": "Chi nhánh",
+  "sidenav.dashboard.booking-management": "Bàn đặt",
+  "sidenav.dashboard.invoice-management": "Quản lý hóa đơn",
+  "sidenav.dashboard.finance-management": "Hóa đơn thu chi",
+
+  "sidenav.dashboard.review": "Quản lý đánh giá",
+  "sidenav.dashboard.user": "Quản lý nhân sự",
+  "sidenav.dashboard.customer": "Quản lý khách hàng",
+
+  "sidenav.apps.chat": "Trò chuyện",
+  "sidenav.apps.ecommerce": "Thương mại điện tử",
+  "sidenav.apps.ecommerce.product": "Sản phẩm",
+  "sidenav.apps.ecommerce.editProduct": "Chỉnh sửa sản phẩm",
+  "sidenav.apps.ecommerce.addProduct": "Thêm sản phẩm",
+  "sidenav.apps.ecommerce.productList": "Danh sách sản phẩm",
+  "sidenav.apps.ecommerce.orders": "Đơn hàng"
+}

@@ -1,0 +1,882 @@
+/* SubscriptionList.module.css */
+
+/* Container chứa tất cả các card */
+.subscriptionList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+    padding: 30px;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.containerFluid {
+    width: 100%;
+    padding: 0 15px;
+    background-color: #151515;
+}
+
+/* Thẻ card */
+.card {
+    position: relative;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    flex: 0 0 calc(33.333% - 20px);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+/* Hiệu ứng hover cho card */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Thân của card */
+.cardBody {
+    padding: 20px;
+    /* display: grid;
+    grid-template-rows: 70px 200px auto auto;
+    gap: 15px; */
+    /* height: 100%; */
+    background-color: #222529;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* Tiêu đề của card */
+.cardTitle {
+    font-size: 25px;
+    color: #fff;
+    min-height: 70px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Container cho hình ảnh */
+.cardBody img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* Nội dung văn bản trong card */
+.cardText {
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Các action buttons trong card */
+.cardActions {
+    width: 100%;
+}
+
+.buttonRow {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Style chung cho các nút */
+.btn {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    border: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Nút xem lịch tập */
+.btn {
+    background: #e96200;
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Nút tạm dừng khóa học */
+.btnPause {
+    background: linear-gradient(45deg, #dc3545, #ff4757) !important;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.2) !important;
+}
+
+.btnPause:hover {
+    background: linear-gradient(45deg, #c82333, #dc3545) !important;
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4) !important;
+}
+
+/* Nút tiếp tục khóa học */
+.btnContinue {
+    background: linear-gradient(45deg, #28a745, #2ecc71) !important;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2) !important;
+}
+
+.btnContinue:hover {
+    background: linear-gradient(45deg, #218838, #28a745) !important;
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4) !important;
+}
+
+/* Nút làm khảo sát */
+.btnSurvey {
+    background: linear-gradient(45deg, #e67e22, #f39c12);
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.btnSurvey::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btnSurvey:hover::before {
+    left: 100%;
+}
+
+.btnSurvey:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+}
+
+/* Hiệu ứng ripple khi click */
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.btn:active::after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+/* Thêm hiệu ứng pulse cho nút tiếp tục và tạm dừng */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(230, 126, 34, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(230, 126, 34, 0);
+    }
+}
+
+.btnContinue, .btnPause {
+    animation: pulse 2s infinite;
+}
+
+.btnSecondary {
+    background-color: blue !important;
+}
+
+/* Các lớp màu trạng thái */
+/* .subscriptionStatusPause {
+    background-color: #ffffff !important;
+} */
+
+.subscriptionStatusFinish {
+    background-color: #ffffff !important;
+}
+
+/* .subscriptionStatusActive,
+.subscriptionStatusOngoing {
+    background-color: #ffffff !important;
+} */
+
+/* Container cho thanh tiến độ */
+.progressContainer {
+    background-color: #6e6e6e;
+    border-radius: 10px;
+    height: 30px;
+    margin: 10px 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Wrapper chứa thanh tiến độ và văn bản */
+.progressBarWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Thanh tiến độ cơ bản */
+.progressBar {
+    height: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Trạng thái hoàn thành (100%) */
+.progressBar[style*="width: 100%"] {
+    background-color: #4cd964;
+    box-shadow: 0 0 10px rgba(76, 217, 100, 0.5);
+}
+
+/* Trạng thái cảnh báo (50-99%) */
+.progressBar[style*="width: 50%"],
+.progressBar[style*="width: 51%"],
+.progressBar[style*="width: 52%"],
+.progressBar[style*="width: 53%"],
+.progressBar[style*="width: 54%"],
+.progressBar[style*="width: 55%"],
+.progressBar[style*="width: 56%"],
+.progressBar[style*="width: 57%"],
+.progressBar[style*="width: 58%"],
+.progressBar[style*="width: 59%"],
+.progressBar[style*="width: 60%"],
+.progressBar[style*="width: 61%"],
+.progressBar[style*="width: 62%"],
+.progressBar[style*="width: 63%"],
+.progressBar[style*="width: 64%"],
+.progressBar[style*="width: 65%"],
+.progressBar[style*="width: 66%"],
+.progressBar[style*="width: 67%"],
+.progressBar[style*="width: 68%"],
+.progressBar[style*="width: 69%"],
+.progressBar[style*="width: 70%"],
+.progressBar[style*="width: 71%"],
+.progressBar[style*="width: 72%"],
+.progressBar[style*="width: 73%"],
+.progressBar[style*="width: 74%"],
+.progressBar[style*="width: 75%"],
+.progressBar[style*="width: 76%"],
+.progressBar[style*="width: 77%"],
+.progressBar[style*="width: 78%"],
+.progressBar[style*="width: 79%"],
+.progressBar[style*="width: 80%"],
+.progressBar[style*="width: 81%"],
+.progressBar[style*="width: 82%"],
+.progressBar[style*="width: 83%"],
+.progressBar[style*="width: 84%"],
+.progressBar[style*="width: 85%"],
+.progressBar[style*="width: 86%"],
+.progressBar[style*="width: 87%"],
+.progressBar[style*="width: 88%"],
+.progressBar[style*="width: 89%"],
+.progressBar[style*="width: 90%"],
+.progressBar[style*="width: 91%"],
+.progressBar[style*="width: 92%"],
+.progressBar[style*="width: 93%"],
+.progressBar[style*="width: 94%"],
+.progressBar[style*="width: 95%"],
+.progressBar[style*="width: 96%"],
+.progressBar[style*="width: 97%"],
+.progressBar[style*="width: 98%"],
+.progressBar[style*="width: 99%"] {
+    background-color: #ffb700;
+    box-shadow: 0 0 10px rgba(255, 183, 0, 0.5);
+}
+
+/* Trạng thái nguy hiểm (0-49%) */
+.progressBar[style*="width: 0%"],
+.progressBar[style*="width: 1%"],
+.progressBar[style*="width: 2%"],
+.progressBar[style*="width: 3%"],
+.progressBar[style*="width: 4%"],
+.progressBar[style*="width: 5%"],
+.progressBar[style*="width: 6%"],
+.progressBar[style*="width: 7%"],
+.progressBar[style*="width: 8%"],
+.progressBar[style*="width: 9%"],
+.progressBar[style*="width: 10%"],
+.progressBar[style*="width: 11%"],
+.progressBar[style*="width: 12%"],
+.progressBar[style*="width: 13%"],
+.progressBar[style*="width: 14%"],
+.progressBar[style*="width: 15%"],
+.progressBar[style*="width: 16%"],
+.progressBar[style*="width: 17%"],
+.progressBar[style*="width: 18%"],
+.progressBar[style*="width: 19%"],
+.progressBar[style*="width: 20%"],
+.progressBar[style*="width: 21%"],
+.progressBar[style*="width: 22%"],
+.progressBar[style*="width: 23%"],
+.progressBar[style*="width: 24%"],
+.progressBar[style*="width: 25%"],
+.progressBar[style*="width: 26%"],
+.progressBar[style*="width: 27%"],
+.progressBar[style*="width: 28%"],
+.progressBar[style*="width: 29%"],
+.progressBar[style*="width: 30%"],
+.progressBar[style*="width: 31%"],
+.progressBar[style*="width: 32%"],
+.progressBar[style*="width: 33%"],
+.progressBar[style*="width: 34%"],
+.progressBar[style*="width: 35%"],
+.progressBar[style*="width: 36%"],
+.progressBar[style*="width: 37%"],
+.progressBar[style*="width: 38%"],
+.progressBar[style*="width: 39%"],
+.progressBar[style*="width: 40%"],
+.progressBar[style*="width: 41%"],
+.progressBar[style*="width: 42%"],
+.progressBar[style*="width: 43%"],
+.progressBar[style*="width: 44%"],
+.progressBar[style*="width: 45%"],
+.progressBar[style*="width: 46%"],
+.progressBar[style*="width: 47%"],
+.progressBar[style*="width: 48%"],
+.progressBar[style*="width: 49%"] {
+    background-color: #ff3b30;
+    box-shadow: 0 0 10px rgba(255, 59, 48, 0.5);
+}
+
+/* Văn bản tiến độ */
+.progressText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Thêm hiệu ứng shine */
+.progressBar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Thêm hiệu ứng hover */
+.progressContainer:hover .progressBar {
+    background-size: 40px 40px;
+    animation: moveStripes 0.5s linear infinite;
+}
+
+/* Thêm hiệu ứng glow khi progress gần hoàn thành (>90%) */
+.progressBar[style*="width: 9"], 
+.progressBar[style*="width: 100"] {
+    box-shadow: 0 0 10px #4cd964;
+    animation: progressGlow 1.5s infinite alternate;
+}
+
+@keyframes progressGlow {
+    from {
+        box-shadow: 0 0 5px #4cd964,
+                    0 0 10px #4cd964;
+    }
+    to {
+        box-shadow: 0 0 15px #4cd964,
+                    0 0 20px #4cd964;
+    }
+}
+
+/* Media Queries để đảm bảo hiển thị responsive */
+@media (max-width: 1200px) {
+    .subscriptionList {
+        max-width: 1000px;
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .subscriptionList {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card {
+        flex: 0 0 calc(100% - 30px);
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 576px) {
+    .subscriptionList {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .card {
+        min-width: 250px;
+    }
+}
+
+/* Định vị trạng thái subscription */
+.status {
+    position: absolute;
+    top: 95px;
+    right: 25px;
+    padding: 2px 6px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* Màu cho từng trạng thái */
+.subscriptionStatusPause .status {
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subscriptionStatusFinish .status {
+    background-color: rgba(255, 193, 7, 0.9);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subscriptionStatusActive .status,
+.subscriptionStatusOngoing .status {
+    background-color: rgba(72, 255, 0, 0.9);
+    color: white;
+    animation: activeGlow 2s infinite;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Style cho phần thông tin huấn luyện viên */
+.coachInfo {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+.coachAvatar {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 100% !important;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #e67e22;
+}
+
+.coachName {
+    color: #df6200;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Điều chỉnh lại margin cho các phần khác */
+.progressContainer {
+    background-color: #6e6e6e;
+    border-radius: 10px;
+    height: 20px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.cardActions {
+    margin-top: auto;
+    width: 100%;
+}
+
+.btnPause {
+    background-color: #dc3545 !important;
+}
+
+.btnPause:hover {
+    background-color: #c82333 !important;
+}
+
+.btnContinue {
+    background-color: #28a745 !important;
+}
+
+.btnContinue:hover {
+    background-color: #218838 !important;
+}
+
+/* Styles cho Modal Antd */
+:global(.ant-modal-content) {
+    background-color: #222529 !important;
+    color: white !important;
+}
+
+:global(.ant-modal-header) {
+    background-color: #222529 !important;
+    border-bottom: 1px solid #404040 !important;
+}
+
+:global(.ant-modal-title) {
+    color: white !important;
+}
+
+:global(.ant-modal-close-x) {
+    color: white !important;
+}
+
+:global(.ant-modal-footer) {
+    border-top: 1px solid #404040 !important;
+}
+
+:global(.ant-btn-primary) {
+    background-color: #e67e22 !important;
+    border-color: #e67e22 !important;
+}
+
+:global(.ant-btn-primary:hover) {
+    background-color: #d35400 !important;
+    border-color: #d35400 !important;
+}
+
+:global(.ant-modal-confirm-title),
+:global(.ant-modal-confirm-content) {
+    color: white !important;
+}
+
+:global(.ant-modal-confirm-btns .ant-btn-default) {
+    background-color: transparent !important;
+    border-color: #404040 !important;
+    color: white !important;
+}
+
+:global(.ant-modal-confirm-btns .ant-btn-default:hover) {
+    border-color: #e67e22 !important;
+    color: #e67e22 !important;
+}
+
+/* Cập nhật màu cho Modal */
+:global(.ant-modal-confirm-title),
+:global(.ant-modal-confirm-content),
+:global(.ant-modal-title),
+:global(.ant-modal-content) {
+    color: white !important;
+}
+
+/* Thêm style cho input search */
+.subscriptionList input {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #404040;
+}
+
+.subscriptionList input::placeholder {
+    color: #888;
+}
+
+.subscriptionList input:focus {
+    background-color: #2a2a2a;
+    color: white;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.25);
+}
+
+.btnSurvey {
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.btnSurvey:hover {
+    background: linear-gradient(145deg, #d35400, #e67e22);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgb(255, 102, 0);
+}
+
+.btnSurvey:active {
+    transform: translateY(0);
+}
+
+.surveyNote {
+    font-size: 0.9rem;
+    color: #ff6b6b;
+    text-align: center;
+    margin: 10px 0;
+    padding: 8px;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 6px;
+}
+
+/* Thêm animation cho status đang hoạt động */
+@keyframes activeGlow {
+    0% {
+        box-shadow: 0 0 2px #4cd964,
+                    0 0 4px #4cd964,
+                    0 0 6px #4cd964;
+    }
+    50% {
+        box-shadow: 0 0 4px #4cd964,
+                    0 0 8px #4cd964,
+                    0 0 12px #4cd964;
+    }
+    100% {
+        box-shadow: 0 0 2px #4cd964,
+                    0 0 4px #4cd964,
+                    0 0 6px #4cd964;
+    }
+}
+
+/* Thêm animation cho status hoàn thành */
+@keyframes finishPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Thêm hiệu ứng hover cho tất cả status (trừ pause) */
+.subscriptionStatusActive .status:hover,
+.subscriptionStatusOngoing .status:hover,
+.subscriptionStatusFinish .status:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Container cho cards */
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Style cho tabs */
+.tabs {
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Style cho navigation bar của tabs */
+:global(.ant-tabs-nav) {
+    margin-bottom: 24px !important;
+    background-color: #222529;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+/* Style cho tab items */
+:global(.ant-tabs-tab) {
+    padding: 12px 24px !important;
+    margin: 0 8px !important;
+    color: #888 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    border-radius: 4px !important;
+}
+
+/* Style cho active tab */
+:global(.ant-tabs-tab-active) {
+    background-color: #2c2c2c !important;
+}
+
+:global(.ant-tabs-tab-active .ant-tabs-tab-btn) {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Style cho tab khi hover */
+:global(.ant-tabs-tab:hover) {
+    color: #ffffff !important;
+    background-color: #2c2c2c !important;
+}
+
+/* Style cho thanh indicator */
+:global(.ant-tabs-ink-bar) {
+    background-color: #ffffff !important;
+    height: 3px !important;
+    border-radius: 3px !important;
+    bottom: 0 !important;
+}
+
+/* Style cho tab content */
+:global(.ant-tabs-content) {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Style cho tab pane */
+:global(.ant-tabs-tabpane) {
+    padding: 10px 0;
+}
+
+/* Animation cho tab transition */
+:global(.ant-tabs-content-holder) {
+    transition: all 0.3s ease;
+}
+
+/* Style cho divider giữa các tabs */
+:global(.ant-tabs-nav::before) {
+    border-bottom: 1px solid #2c2c2c !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    :global(.ant-tabs-tab) {
+        padding: 8px 16px !important;
+        margin: 0 4px !important;
+        font-size: 14px !important;
+    }
+}
+
+.noSubscriptionMessage {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 16px;
+    width: 100%;
+    background-color: #222529;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.startDate {
+    font-size: 14px;
+    color: #888;
+    margin: 10px 0 0 0;
+    /* padding: 5px 10px; */
+    background-color: #2c2c2c;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Thêm styles cho error container */
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background-color: #151515;
+  /* border-radius: 8px; */
+  padding: 30px;
+  /* margin: 30px auto;
+  max-width: 500px; */
+}
+
+.errorIcon {
+  font-size: 60px;
+  color: #e96200;
+  margin-bottom: 20px;
+  animation: errorPulse 2s infinite;
+}
+
+.errorMessage {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.errorDetail {
+  font-size: 16px;
+  color: #888;
+  text-align: center;
+}
+
+@keyframes errorPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

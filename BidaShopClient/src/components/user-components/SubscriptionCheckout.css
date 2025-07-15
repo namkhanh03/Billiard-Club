@@ -1,0 +1,394 @@
+.subscription-page {
+    padding: 15px;
+    width: 100%;
+}
+
+.header-title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #c4c4c4;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #feffff;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.course-images-slider {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.course-placeholder-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.course-info-checkout {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.course-name-checkout {
+    font-size: 26px;
+    font-weight: bold;
+    color: #e96200;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.course-description-checkout {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.course-info-checkout p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #e96200;
+}
+
+.course-info-checkout .info-label {
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.next-btn,
+.back-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.next-btn {
+    background-color: #f39c12;
+    color: #2c3e50;
+}
+
+.back-btn {
+    background-color: #666;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #555;
+}
+
+.next-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Slider Navigation */
+.slider-image {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.course-card-checkout {
+    background-color: #2d2f31;
+    border: 1px solid #e96200;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #ff0000;
+}
+
+/* Thêm styles mới */
+.course-info-basic {
+    /* background-color: #2d2f31; */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e96200;
+    height: 100%;
+}
+
+.course-images-container {
+    /* background-color: #2d2f31; */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e96200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.course-description-section {
+    /* background-color: #2d2f31; */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e96200;
+}
+
+.description-title {
+    color: #e96200;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.course-name-checkout {
+    color: #e96200;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e96200;
+    padding-bottom: 10px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modalStyle {
+        width: 95% !important;
+        padding: 10px !important;
+    }
+
+    .header-title {
+        font-size: 20px;
+    }
+
+    .course-name-checkout {
+        font-size: 18px;
+    }
+
+    /* .course-info-basic,
+    .course-images-container,
+    .course-description-section {
+        margin-bottom: 15px;
+    } */
+
+    .course-details p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .back-btn,
+    .next-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .subscription-page {
+        padding: 10px;
+    }
+
+    .header-title {
+        font-size: 18px;
+    }
+
+    .course-name-checkout {
+        font-size: 20px;
+    }
+
+    .img-fluid {
+        max-height: 200px;
+    }
+
+    /* .course-info-basic,
+    .course-images-container,
+    .course-description-section {
+        padding: 10px;
+    } */
+
+    .course-details p {
+        font-size: 13px;
+    }
+
+    .back-btn,
+    .next-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    /* Cải thiện layout trên mobile */
+    .row {
+        margin: 0 -5px;
+    }
+
+    .col-md-6,
+    .col-12 {
+        padding: 0;
+    }
+}
+
+/* Thêm animation cho modal */
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.modal-exit {
+    opacity: 1;
+}
+
+.modal-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}
+
+/* Thêm styles cho container chứa buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 10px; */
+  margin-top: 20px;
+}
+
+/* Media query cho mobile */
+@media (max-width: 768px) {
+  /* Style cho modal content */
+  .subscription-page {
+    position: relative;
+    height: calc(92vh - 32px); /* Trừ đi chiều cao của button container */
+    overflow-y: auto;
+  }
+
+  .button-container {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 1000;
+    background-color: #1c1d1f;
+  }
+
+  /* Style cho các nút */
+  .back-btn,
+  .next-btn {
+    flex: 1;
+    /* min-width: 0; */
+    white-space: nowrap;
+  }
+}
+
+/* Thêm styles mới cho thông tin chi tiết */
+.course-details {
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+}
+
+.course-details p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.course-details strong {
+  color: #a9a9a9;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #ff0000;
+  font-size: 0.9em;
+}
+
+.discounted-price {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Đảm bảo font size nhất quán */
+.course-details p,
+.course-details span,
+.course-description-checkout {
+  font-size: 14px;
+  color: #e96200;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-details p,
+  .course-details span,
+  .course-description-checkout {
+    font-size: 13px;
+  }
+}
+
+.subscription-page .course-details p {
+  font-size: 14px;
+}
+
+.subscription-page .course-description-checkout {
+  font-size: 14px;
+}
+
+
+

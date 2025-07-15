@@ -1,0 +1,60 @@
+.commentBox {
+    background-color: #151515;
+    padding: 0;
+    /* Xóa padding/margin gây khoảng cách */
+    margin: 0;
+}
+
+.comment {
+    background-color: rgba(61, 61, 61, 0.7);
+    width: 100%;
+    /* Đảm bảo chiều rộng toàn phần */
+    margin: 0;
+    /* Xóa margin không cần thiết */
+    padding: 10px;
+    /* Tùy chỉnh padding bên trong (nếu cần) */
+    box-sizing: border-box;
+    /* Đảm bảo padding không làm vượt chiều rộng */
+}
+
+.replyBox {
+    background-color: rgba(80, 80, 80, 0.7);
+}
+
+.replyBoxContent {
+    background-color: rgba(80, 80, 80, 0.7);
+}
+
+div.comment .flex h6 {
+    color: rgb(255, 94, 0) !important;
+}
+
+
+@media (max-width: 768px) {
+    .commentBox {
+        width: 100%;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    .comment {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .commentBox {
+        width: 100%;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    .comment {
+        width: 100%;
+        padding: 8px;
+    }
+}

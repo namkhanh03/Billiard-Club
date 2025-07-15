@@ -1,0 +1,449 @@
+/* General styles */
+html,
+body {
+    max-width: 100%;
+    /* Không cho phép nội dung lớn hơn chiều ngang màn hình */
+    overflow-x: hidden;
+    /* Loại bỏ cuộn ngang */
+}
+
+* {
+    box-sizing: border-box;
+    /* Đảm bảo padding/margin không gây lỗi tràn */
+}
+
+div.w-full {
+    width: 100%;
+    /* Đặt chiều rộng phù hợp với container */
+    max-width: 100%;
+    /* Ngăn vượt quá màn hình */
+    margin: 0 auto;
+    /* Căn giữa */
+    overflow: hidden;
+    /* Ngăn cuộn ngang */
+    text-align: center;
+    /* Căn giữa nội dung */
+    box-sizing: border-box;
+    /* Đảm bảo padding không gây tràn */
+}
+
+.containerSignin {
+    position: relative;
+    background-image: url('https://n-one.vn/wp-content/uploads/2023/09/354260616_796374308518261_6402349048964068737_n.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    /* Giảm padding để phù hợp hơn */
+    margin: 0 auto;
+    /* Căn giữa container */
+    overflow: hidden;
+}
+
+.containerSignin {
+    background-color: #151515; /* Màu nền cho container */
+    padding: 2rem; /* Padding cho container */
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho container */
+    height: 100vh; /* Chiều cao 100% viewport */
+    display: flex; /* Flexbox cho container */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-top: 70px;
+}
+/* Overlay for the blurred background */
+.containerSignin::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Màu phủ tối hơn */
+    filter: blur(5px);
+    /* Làm mờ nền */
+    z-index: 1;
+    /* Đặt dưới form */
+}
+
+.signinComponent {
+    position: relative;
+    z-index: 2;
+    /* Đặt trên overlay */
+    padding: 1.5rem;
+    /* Giảm padding để tránh tràn */
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Màu nền tối hơn */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    /* Chiếm toàn bộ màn hình */
+    max-width: 400px;
+    /* Giới hạn chiều rộng */
+    margin: 0 auto;
+    /* Căn giữa form */
+    overflow: hidden;
+    /* Ngăn lỗi tràn */
+}
+
+.crossbar {
+    height: 2px;
+    background: #e9600e;
+    margin: 1rem 0;
+    width: 50%;
+    /* Tăng chiều rộng */
+    margin: 0 auto;
+}
+
+.loginMessage {
+    text-align: center; /* Căn giữa cho login message */
+    font-family: Arial, sans-serif; /* Font cho login message */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+.welcomeText {
+    font-size: 16px; /* Kích thước chữ cho welcome text */
+    color: white; /* Đổi màu chữ thành trắng */
+    margin: 0; /* Không có margin */
+}
+
+.titleSingin {
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 32px;
+    color: #333;
+    /* Màu chữ tối hơn để tương phản */
+}
+.forgotPassword {
+    font-size: 14px; /* Kích thước chữ cho forgot password */
+    color: #fff; /* Màu chữ */
+    margin: 10px 0; /* Khoảng cách trên và dưới */
+}
+
+.link {
+    color: #fb8c00; /* Màu chữ cho link */
+    text-decoration: none; /* Không có gạch chân */
+}
+
+.link:hover {
+    text-decoration: none; /* Không gạch chân khi hover */
+    outline: none; /* Không có outline khi hover */
+    color: #fb8c00; /* Màu chữ khi hover */
+}
+
+/* Button styles */
+.gradientButton {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #e9600e;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Đổ bóng rõ hơn */
+}
+
+.gradientButton .buttonIcon {
+    margin-right: 8px; /* Khoảng cách bên phải cho icon */
+    font-size: 18px; /* Kích thước chữ cho icon */
+}
+
+.gradientButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fb8c00;
+    /* Đổ bóng khi hover */
+}
+
+.gradientButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Divider styles */
+.divider {
+    display: flex; /* Flexbox cho divider */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    text-align: center; /* Căn giữa chữ */
+    color: aliceblue; /* Màu chữ */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Đậm chữ */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+.divider span {
+    padding: 0 10px; /* Khoảng cách bên trái và bên phải cho span */
+    position: relative; /* Để sử dụng pseudo-elements */
+}
+
+.divider::before,
+.divider::after {
+    content: ''; /* Nội dung rỗng cho pseudo-elements */
+    flex: 1; /* Chiếm không gian còn lại */
+    height: 1px; /* Chiều cao của đường kẻ */
+    background: #ccc; /* Màu của đường kẻ */
+}
+
+.divider::before {
+    margin-right: 10px; /* Khoảng cách bên phải cho đường kẻ trước */
+}
+
+.divider::after {
+    margin-left: 10px; /* Khoảng cách bên trái cho đường kẻ sau */
+}
+
+/* Form styles */
+.formOutline {
+    position: relative; /* Để sử dụng cho input */
+}
+
+.formOutline input {
+    border-radius: 0px; 
+    border-top: none !important; 
+    border-left: none !important; 
+    border-right: none !important; 
+    background-color: white; 
+    border-bottom: 1px solid #ced4da; 
+    width: 100%;
+        /* Input luôn chiếm hết chiều ngang */
+        max-width: 100%;
+        /* Không cho phép tràn */
+        padding: 10px;
+        /* Giảm padding */
+        font-size: 14px;
+        border-radius: 8px;
+        box-sizing: border-box;
+        /* Đảm bảo padding không làm tràn */
+}
+
+.formControlLg {
+    font-size: 12px !important; 
+}
+
+/* Alert styles */
+.alert {
+    margin-bottom: 1rem; /* Khoảng cách dưới cho alert */
+}
+
+/* Small text */
+.small {
+    font-size: 0.875rem; /* Kích thước chữ nhỏ */
+}
+
+/* Image styles */
+img {
+    object-fit: cover; /* Cách hiển thị hình ảnh */
+    object-position: left; /* Vị trí hình ảnh */
+}
+
+/* Additional spacing */
+.pt-1 {
+    padding-top: 0.25rem !important; /* Padding trên */
+}
+
+.mb-3 {
+    color: aliceblue; /* Màu chữ cho margin-bottom */
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+    /* Khoảng cách mặc định */
+    width: 100%;
+    /* Chiếm toàn bộ chiều ngang */
+    max-width: 100%;
+    /* Đảm bảo không tràn ra ngoài */
+    box-sizing: border-box;
+    /* Đảm bảo margin và padding không làm vượt kích thước */
+    overflow: hidden;
+    /* Ngăn cuộn ngang */
+    display: flex;
+    /* Đảm bảo bố cục không bị lỗi */
+    justify-content: center;
+    /* Căn giữa nội dung */
+}
+.mb-5 {
+    margin-bottom: 3rem !important; /* Khoảng cách dưới */
+}
+
+.pb-lg-2 {
+    padding-bottom: 0.5rem !important; /* Padding dưới */
+}
+
+/* Misc styles */
+.linkInfo {
+    color: #e9600e;
+    /* Màu chữ */
+    text-decoration: none;
+    /* Loại bỏ gạch chân */
+    white-space: nowrap;
+    /* Ngăn ngắt dòng */
+    font-size: 14px;
+    /* Điều chỉnh kích thước chữ */
+    display: inline-block;
+    /* Đảm bảo nội dung nằm gọn trong block */
+    text-align: center;
+    /* Căn giữa */
+}
+
+.linkInfo:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+@media (max-width: 768px) {
+    .signinComponent {
+        width: 90%;
+        padding: 1.5rem;
+        /* Giảm padding */
+    }
+
+    .gradientButton {
+        font-size: 14px;
+        padding: 8px 16px;
+        /* Giảm padding */
+    }
+
+    .form-outline input {
+        font-size: 14px;
+        /* Giảm kích thước chữ */
+    }
+         .mb-4 {
+             margin-bottom: 1rem !important;
+             /* Giảm khoảng cách dưới cho màn hình vừa */
+         }
+}
+
+@media (max-width: 480px) {
+    .signinComponent {
+        width: 100%;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    .gradientButton {
+        font-size: 12px;
+        /* Giảm kích thước chữ */
+        padding: 8px;
+        /* Giảm padding */
+    }
+
+    .form-outline input {
+        font-size: 12px;
+        padding: 8px;
+        /* Giảm padding */
+    }
+
+    .welcomeText {
+        font-size: 14px;
+        /* Giảm kích thước chữ */
+    }
+
+    .divider {
+        font-size: 12px;
+        /* Giảm kích thước chữ */
+    }
+                 div.w-full {
+                     width: 100%;
+                     max-width: 100%;
+                     overflow: hidden;
+                 }
+        
+                 .mb-4 {
+                     margin-bottom: 0.8rem;
+                     width: 100%;
+                     max-width: 100%;
+                 }
+        .linkInfo {
+            font-size: 12px;
+            /* Giảm kích thước chữ */
+        }
+    
+        .forgotPassword {
+            font-size: 12px;
+            /* Giảm kích thước chữ */
+            margin: 5px 0;
+            /* Giảm khoảng cách trên và dưới */
+        }
+}
+
+@media (max-width: 320px) {
+    .signinComponent {
+        width: 100%;
+        padding: 0.8rem;
+        /* Giảm padding */
+        margin: 0 auto;
+        max-width: none;
+        /* Bỏ giới hạn chiều rộng */
+    }
+
+    .titleSingin {
+        font-size: 16px;
+        /* Giảm kích thước chữ */
+        text-align: center;
+    }
+
+    .welcomeText {
+        font-size: 12px;
+        /* Chữ nhỏ hơn */
+        text-align: center;
+        margin: 0 5px;
+        /* Thêm margin ngang */
+    }
+
+    .gradientButton {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .form-outline input {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .divider {
+        font-size: 10px;
+        margin: 10px 0;
+    }
+
+    .divider span {
+        padding: 0 5px;
+    }
+
+                 div.w-full {
+                     width: 100%;
+                     max-width: 100%;
+                     overflow: hidden;
+                 }
+        
+                 .mb-4 {
+                     margin-bottom: 0.5rem;
+                     width: 100%;
+                     max-width: 100%;
+                 }
+         .linkInfo {
+             font-size: 10px;
+             /* Giảm thêm kích thước chữ */
+         }
+    
+         .forgotPassword {
+             font-size: 10px;
+             /* Giảm thêm kích thước chữ */
+             margin: 5px 0;
+             /* Giảm khoảng cách */
+         }
+}

@@ -1,0 +1,107 @@
+.hs-item {
+    height: 100vh;
+    /* Đảm bảo chiều cao luôn bằng chiều cao màn hình */
+    padding-top: 0px;
+    background-color: rgba(36, 34, 34, 0.5);
+    background-size: cover;
+    /* Đảm bảo ảnh nền bao phủ toàn bộ */
+    background-position: center;
+    /* Căn giữa ảnh nền */
+    background-repeat: no-repeat;
+    /* Không lặp lại ảnh nền */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Điều chỉnh hướng dọc khi trên màn hình nhỏ */
+    align-items: center;
+    /* Căn giữa nội dung theo chiều ngang */
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều dọc */
+    background-color: rgba(36, 34, 34, 0.5);
+}
+
+
+.hi-text {
+    position: relative;
+    text-align: center;
+    /* Đảm bảo chữ nằm giữa màn hình trên điện thoại */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    /* Đảm bảo chữ chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+    max-width: 450px;
+    /* Giới hạn tối đa chiều rộng trên màn hình lớn */
+    /* background-color: rgba(36, 34, 34, 0.5); */
+    /* Thêm nền mờ phía sau chữ để dễ đọc hơn */
+}
+
+
+/* Định dạng cho chữ thường */
+.hi-text span {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Định dạng cho chữ tiêu đề lớn */
+.hi-text h1 {
+    font-size: 40px;
+    /* Giảm kích thước chữ trên điện thoại */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Định dạng cho chữ "strong" nổi bật */
+.hi-text h1 strong {
+    color: #ff6200;
+    /* Màu cam nổi bật */
+}
+
+/* Nút "Get Info" */
+.primary-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #ff6200;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: #e55900;
+    /* Đổi màu khi hover */
+}
+
+@media (min-width: 1024px) {
+    .hi-text {
+        max-width: 600px;
+        /* Tăng chiều rộng nội dung */
+        transform: scale(1.2);
+        /* Phóng to toàn bộ nội dung */
+    }
+
+    .hi-text h1 {
+        font-size: 56px;
+        /* Tăng kích thước chữ */
+    }
+
+    .primary-btn {
+        font-size: 18px;
+        /* Tăng kích thước nút */
+        padding: 20px 40px;
+        /* Tăng kích thước nút */
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: none !important;
+    /* Ẩn hoàn toàn các nút điều hướng */
+}
